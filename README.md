@@ -1,2 +1,2 @@
 # Convert Money
-<img source='assets/product.png' width='200'>
+<img source='assets/product.png' style="width:200" >
