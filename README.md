@@ -10,4 +10,4 @@
     they will:
     
     > MY APP
-    > NEW CONVERSION
+    > NEW CONVERSION.
