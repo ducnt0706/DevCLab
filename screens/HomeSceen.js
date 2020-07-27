@@ -1,4 +1,4 @@
-import React, {useState, useContext, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Image,
@@ -7,6 +7,7 @@ import {
   FlatList,
   ScrollView,
   Modal,
+  TouchableOpacity,
 } from 'react-native';
 
 import Card from '../components/Card';
@@ -16,17 +17,30 @@ import RecordItem from '../components/RecordItem';
 
 export default function HomeSceen({navigation}) {
   const DATA = require('../datas/data.json');
-  const [modalVisible, setModalVisible] = useState(false)
-  const toggleModal = ()=>{
+  const [modalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
     setModalVisible(!modalVisible);
-  }
+  };
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity onPress={() => toggleModal()}>
+          <Image
+            style={globalStyles.headerRight}
+            source={require('../assets/Group1.png')}
+          />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
   return (
     <SafeAreaView style={globalStyles.totalConent}>
-
-      <Modal  visible={modalVisible}>
+      <Modal visible={modalVisible}>
         <View style={globalStyles.container}>
           <Text>Notification</Text>
-          <Image source={require('../assets/close.png')} resizeMode="contain" />
+          <TouchableOpacity onPress={() => toggleModal()}>
+            <Image style={globalStyles.imageModal} source={require('../assets/close.png')} resizeMode="contain" />
+          </TouchableOpacity>
         </View>
       </Modal>
 
@@ -61,11 +75,11 @@ export default function HomeSceen({navigation}) {
         <Text style={globalStyles.sectionText}>Last Record Overview</Text>
       </View>
       <FlatList
-      data={DATA.detail}
-      renderItem={({item})=>(
-        <RecordItem item={item} navigation={navigation}/>
-      )}
-      keyExtractor={(item)=>`${item.id}`}
+        data={DATA.detail}
+        renderItem={({item}) => (
+          <RecordItem item={item} navigation={navigation} />
+        )}
+        keyExtractor={(item) => `${item.id}`}
       />
     </SafeAreaView>
   );

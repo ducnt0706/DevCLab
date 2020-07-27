@@ -3,12 +3,14 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'DevCLab4' do
+target 'LabSubmit' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'DevCLab4Tests' do
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  target 'LabSubmitTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +25,10 @@ target 'DevCLab4' do
   end
 end
 
-target 'DevCLab4-tvOS' do
-  # Pods for DevCLab4-tvOS
+target 'LabSubmit-tvOS' do
+  # Pods for LabSubmit-tvOS
 
-  target 'DevCLab4-tvOSTests' do
+  target 'LabSubmit-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

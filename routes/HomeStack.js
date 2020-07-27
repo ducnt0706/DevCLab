@@ -27,14 +27,6 @@ export default function HomeStack() {
               source={require('../assets/Group2.png')}
             />
           ),
-          headerRight: () => (
-            <TouchableOpacity onPress={() => alert('show modal')}>
-              <Image
-                style={globalStyles.headerRight}
-                source={require('../assets/Group1.png')}
-              />
-            </TouchableOpacity>
-          ),
         }}
       />
       <Stack.Screen name="Detail" component={DetailScreen} />

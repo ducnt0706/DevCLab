@@ -68,16 +68,16 @@ export const globalStyles=StyleSheet.create({
         fontWeight:'normal'
     },recordCard:{
         flexDirection:'row',
-        borderRadius:10,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 2,
         },
+        borderRadius:5,
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5,
-        padding:10,
+        elevation: 3,
+        padding:15,
         marginHorizontal:10,
         marginVertical:10,
         justifyContent:"space-between",
@@ -90,6 +90,9 @@ export const globalStyles=StyleSheet.create({
         left:-50
     },recordContent2:{
         
+    },imageModal:{
+        width:50,
+        height:100
     }
 
 })

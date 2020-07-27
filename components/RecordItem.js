@@ -23,7 +23,7 @@ export default function RecordItem({item,navigation}) {
         <View>
           <Image
             style={globalStyles.recordImage}
-            resizeMode="contain"
+            resizeMode="cover"
             source={{
               uri: item.production_image,
             }}

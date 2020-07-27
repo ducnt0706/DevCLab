@@ -1,2 +1,0 @@
-# DevCTutorial
-Assignment 
